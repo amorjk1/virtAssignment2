@@ -342,5 +342,5 @@ if __name__ == '__main__':
         'status'  : status
         }
 
-    action = operations.get(operation, lambda: print('{}: no such operation'.format(operation)))
+    action = operations.get(operation, lambda: print("{}: no such operation".format(operation)))
     action()
