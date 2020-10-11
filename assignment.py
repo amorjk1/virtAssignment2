@@ -160,7 +160,6 @@ def run():
     except:
         print(str(SERVER_DB)+" is already running")
 
-    pass
 
 def stop():
     ''' Stop  a set of Openstack virtual machines
@@ -201,7 +200,7 @@ def stop():
             conn.compute.stop_server(server_db)   
     except:
         print(str(SERVER_DB)+" is already shutdown")
-    pass
+    
 
 def destroy():
     ''' Tear down the set of Openstack resources 
@@ -246,7 +245,7 @@ def destroy():
                 print("removing interface from router")
                 conn.network.remove_interface_from_router(router, subnet.id)
             except Exception:
-                pass
+                
 
         for port in conn.network.get_subnet_ports(subnet.id):
             print("removing port...")
@@ -268,7 +267,6 @@ def destroy():
     if network is not None:
         print(str(network)+" network being removed")
         conn.network.delete_network(network)
-    pass
 
 def status():
     ''' Print a status report on the OpenStack
@@ -311,7 +309,6 @@ def status():
         print(str(server_db_status))    
         server_db_ip=server_db.addresses
         print(str(server_db_ip)+" db server ip")
-    pass
 
 
 
